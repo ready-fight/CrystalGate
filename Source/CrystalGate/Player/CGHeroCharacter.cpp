@@ -17,15 +17,25 @@ ACGHeroCharacter::ACGHeroCharacter()
     bUseControllerRotationRoll = false;
 
     GetCharacterMovement()->bOrientRotationToMovement = true;
-    GetCharacterMovement()->RotationRate = FRotator(0.0f, 540.0f, 0.0f);
-    GetCharacterMovement()->MaxWalkSpeed = 500.0f;
+    GetCharacterMovement()->RotationRate = FRotator(0.0f, 720.0f, 0.0f);
+
+    GetCharacterMovement()->MaxWalkSpeed = 520.0f;
+    GetCharacterMovement()->BrakingDecelerationWalking = 1800.0f;
+    GetCharacterMovement()->GroundFriction = 8.0f;
+    GetCharacterMovement()->MaxAcceleration = 2200.0f;
+
     GetCharacterMovement()->JumpZVelocity = 550.0f;
     GetCharacterMovement()->AirControl = 0.35f;
 
     CameraBoom = CreateDefaultSubobject<USpringArmComponent>(TEXT("CameraBoom"));
     CameraBoom->SetupAttachment(RootComponent);
-    CameraBoom->TargetArmLength = 400.0f;
+    CameraBoom->TargetArmLength = 420.0f;
+    CameraBoom->SocketOffset = FVector(0.0f, 40.0f, 60.0f);
     CameraBoom->bUsePawnControlRotation = true;
+    CameraBoom->bEnableCameraLag = true;
+    CameraBoom->CameraLagSpeed = 12.0f;
+    CameraBoom->bEnableCameraRotationLag = true;
+    CameraBoom->CameraRotationLagSpeed = 14.0f;
 
     FollowCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("FollowCamera"));
     FollowCamera->SetupAttachment(CameraBoom);
