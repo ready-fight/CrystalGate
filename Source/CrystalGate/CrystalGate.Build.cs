@@ -20,7 +20,15 @@ public class CrystalGate : ModuleRules
 			"GameplayTasks",
 			"AIModule",
 			"NavigationSystem",
-			"UMG"
+			"UMG",
 		});
+		
+		PrivateDependencyModuleNames.AddRange(new string[] { });
+		
+		PrivateIncludePaths.AddRange(new string[]
+		{
+			ModuleDirectory
+		});
+
 	}
 }
