@@ -22,13 +22,14 @@ public class CrystalGate : ModuleRules
 			"NavigationSystem",
 			"UMG",
 		});
-		
-		PrivateDependencyModuleNames.AddRange(new string[] { });
-		
+
+		PrivateDependencyModuleNames.AddRange(new string[]
+		{
+		});
+
 		PrivateIncludePaths.AddRange(new string[]
 		{
 			ModuleDirectory
 		});
-
 	}
 }
