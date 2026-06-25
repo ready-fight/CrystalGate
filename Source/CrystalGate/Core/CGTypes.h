@@ -6,7 +6,7 @@ UENUM(BlueprintType)
 enum class ECGTeam : uint8
 {
 	Player,
-	Enemy,git 
+	Enemy,
 	Neutral
 };
 
